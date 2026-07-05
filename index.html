@@ -10,7 +10,7 @@
     <meta name="author" content="Muhammad Akash">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0f172a">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -2239,43 +2239,101 @@
 
                             <div class="grid md:grid-cols-2 gap-6">
 
-                                <div>
+                                <div class="relative custom-select">
 
                                     <label class="block mb-3 text-sm uppercase tracking-[3px] text-zinc-400">
-
                                         Budget
-
                                     </label>
 
-                                    <select
-                                        class="w-full rounded-2xl bg-zinc-900/70 border border-white/10 px-6 py-5 text-white outline-none transition duration-300 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/20">
+                                    <button type="button"
+                                        class="select-btn w-full rounded-2xl border border-white/10 bg-zinc-900/70 px-6 py-5 flex justify-between items-center text-left text-white outline-none transition-all duration-300 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/20">
 
-                                        <option>$200 - $500</option>
-                                        <option>$500 - $1000</option>
-                                        <option>$1000 - $3000</option>
-                                        <option>$3000+</option>
+                                        <span class="selected-option">Select Budget</span>
 
-                                    </select>
+                                        <svg class="arrow w-5 h-5 text-cyan-400 transition-transform duration-300"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7" />
+
+                                        </svg>
+
+                                    </button>
+
+                                    <ul
+                                        class="options absolute mt-3 w-full rounded-2xl bg-zinc-900/95 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden opacity-0 invisible scale-95 transition-all duration-300 z-50">
+
+                                        <li
+                                            class="option px-6 py-4 hover:bg-cyan-500/15 cursor-pointer text-zinc-300 hover:text-cyan-300 transition">
+                                            $200 - $500
+                                        </li>
+
+                                        <li
+                                            class="option px-6 py-4 hover:bg-cyan-500/15 cursor-pointer text-zinc-300 hover:text-cyan-300 transition">
+                                            $500 - $1000
+                                        </li>
+
+                                        <li
+                                            class="option px-6 py-4 hover:bg-cyan-500/15 cursor-pointer text-zinc-300 hover:text-cyan-300 transition">
+                                            $1000 - $3000
+                                        </li>
+
+                                        <li
+                                            class="option px-6 py-4 hover:bg-cyan-500/15 cursor-pointer text-zinc-300 hover:text-cyan-300 transition">
+                                            $3000+
+                                        </li>
+
+                                    </ul>
 
                                 </div>
 
-                                <div>
+                                <div class="relative custom-select">
 
                                     <label class="block mb-3 text-sm uppercase tracking-[3px] text-zinc-400">
-
                                         Timeline
-
                                     </label>
 
-                                    <select
-                                        class="w-full rounded-2xl bg-zinc-900/70 border border-white/10 px-6 py-5 text-white outline-none transition duration-300 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20">
+                                    <button type="button"
+                                        class="select-btn w-full rounded-2xl border border-white/10 bg-zinc-900/70 px-6 py-5 flex justify-between items-center text-left text-white transition-all duration-300 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20">
 
-                                        <option>ASAP</option>
-                                        <option>1 Week</option>
-                                        <option>2-4 Weeks</option>
-                                        <option>Flexible</option>
+                                        <span class="selected-option">Select Timeline</span>
 
-                                    </select>
+                                        <svg class="arrow w-5 h-5 text-purple-400 transition-transform duration-300"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7" />
+
+                                        </svg>
+
+                                    </button>
+
+                                    <ul
+                                        class="options absolute mt-3 w-full rounded-2xl bg-zinc-900/95 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden opacity-0 invisible scale-95 transition-all duration-300 z-50">
+
+                                        <li
+                                            class="option px-6 py-4 hover:bg-purple-500/15 cursor-pointer text-zinc-300 hover:text-purple-300 transition">
+                                            ASAP
+                                        </li>
+
+                                        <li
+                                            class="option px-6 py-4 hover:bg-purple-500/15 cursor-pointer text-zinc-300 hover:text-purple-300 transition">
+                                            1 Week
+                                        </li>
+
+                                        <li
+                                            class="option px-6 py-4 hover:bg-purple-500/15 cursor-pointer text-zinc-300 hover:text-purple-300 transition">
+                                            2-4 Weeks
+                                        </li>
+
+                                        <li
+                                            class="option px-6 py-4 hover:bg-purple-500/15 cursor-pointer text-zinc-300 hover:text-purple-300 transition">
+                                            Flexible
+                                        </li>
+
+                                    </ul>
 
                                 </div>
 

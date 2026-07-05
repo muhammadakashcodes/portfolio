@@ -158,3 +158,99 @@ if (window.matchMedia('(hover:hover)').matches) {
 }
 
 document.getElementById('menuBtn').onclick = () => document.getElementById('mobileMenu').classList.toggle('hidden');
+
+document.querySelectorAll(".custom-select").forEach(select => {
+
+    const button = select.querySelector(".select-btn");
+    const menu = select.querySelector(".options");
+    const arrow = select.querySelector(".arrow");
+    const selected = select.querySelector(".selected-option");
+
+    button.addEventListener("click", () => {
+
+        // Close all other dropdowns
+        document.querySelectorAll(".custom-select").forEach(other => {
+
+            if (other !== select) {
+
+                other.querySelector(".options").classList.remove(
+                    "opacity-100",
+                    "visible",
+                    "scale-100"
+                );
+
+                other.querySelector(".options").classList.add(
+                    "opacity-0",
+                    "invisible",
+                    "scale-95"
+                );
+
+                other.querySelector(".arrow").classList.remove("rotate-180");
+
+            }
+
+        });
+
+        menu.classList.toggle("opacity-100");
+        menu.classList.toggle("visible");
+        menu.classList.toggle("scale-100");
+
+        menu.classList.toggle("opacity-0");
+        menu.classList.toggle("invisible");
+        menu.classList.toggle("scale-95");
+
+        arrow.classList.toggle("rotate-180");
+
+    });
+
+    select.querySelectorAll(".option").forEach(option => {
+
+        option.addEventListener("click", () => {
+
+            selected.textContent = option.textContent.trim();
+
+            menu.classList.remove(
+                "opacity-100",
+                "visible",
+                "scale-100"
+            );
+
+            menu.classList.add(
+                "opacity-0",
+                "invisible",
+                "scale-95"
+            );
+
+            arrow.classList.remove("rotate-180");
+
+        });
+
+    });
+
+});
+
+document.addEventListener("click", e => {
+
+    document.querySelectorAll(".custom-select").forEach(select => {
+
+        if (!select.contains(e.target)) {
+
+            select.querySelector(".options").classList.remove(
+                "opacity-100",
+                "visible",
+                "scale-100"
+            );
+
+            select.querySelector(".options").classList.add(
+                "opacity-0",
+                "invisible",
+                "scale-95"
+            );
+
+            select.querySelector(".arrow").classList.remove("rotate-180");
+
+        }
+
+    });
+
+});
