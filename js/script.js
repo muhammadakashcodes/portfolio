@@ -157,7 +157,42 @@ if (window.matchMedia('(hover:hover)').matches) {
 
 }
 
-document.getElementById('menuBtn').onclick = () => document.getElementById('mobileMenu').classList.toggle('hidden');
+document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    const openMenu = () => {
+        mobileMenu.classList.add("max-h-64", "opacity-100");
+        mobileMenu.classList.remove("max-h-0", "opacity-0");
+        menuBtn.textContent = "✕";
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.remove("max-h-64", "opacity-100");
+        mobileMenu.classList.add("max-h-0", "opacity-0");
+        menuBtn.textContent = "☰";
+    };
+
+    menuBtn.addEventListener("click", () => {
+        const isClosed = mobileMenu.classList.contains("max-h-0");
+        if (isClosed) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+            closeMenu();
+        }
+    });
+});
 
 document.querySelectorAll(".custom-select").forEach(select => {
 
