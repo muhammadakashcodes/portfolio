@@ -1,14 +1,9 @@
 const progressBar = document.getElementById("progressBar");
 
-const backToTop =
-    document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
 
-const header =
-    document.querySelector("header");
-
-function handleScroll() {
-
-    const scrollTop = document.documentElement.scrollTop;
+    const scrollTop =
+        document.documentElement.scrollTop;
 
     const scrollHeight =
         document.documentElement.scrollHeight -
@@ -19,6 +14,12 @@ function handleScroll() {
 
     progressBar.style.width = progress + "%";
 
+});
+
+const backToTop =
+    document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
 
     if (window.scrollY > 500) {
 
@@ -26,7 +27,9 @@ function handleScroll() {
         backToTop.classList.remove("translate-y-10");
         backToTop.classList.remove("invisible");
 
-    } else {
+    }
+
+    else {
 
         backToTop.classList.add("opacity-0");
         backToTop.classList.add("translate-y-10");
@@ -34,26 +37,8 @@ function handleScroll() {
 
     }
 
-
-    if (window.scrollY > 40) {
-
-        header.classList.add("shadow-2xl");
-        header.classList.add("shadow-black/40");
-
-    } else {
-
-        header.classList.remove("shadow-2xl");
-        header.classList.remove("shadow-black/40");
-
-    }
-
-}
-
-window.addEventListener("scroll", handleScroll, {
-    passive: true
 });
 
-handleScroll();
 
 backToTop.addEventListener("click", () => {
 
@@ -94,9 +79,7 @@ const observer =
 
     );
 
-const elements = document.querySelectorAll("button,a");
-
-elements.forEach(btn => {
+document.querySelectorAll("button,a").forEach(btn => {
 
     btn.addEventListener("mouseenter", () => {
 
@@ -112,53 +95,53 @@ elements.forEach(btn => {
 
 });
 
-const group = document.querySelectorAll(".group")
-group.forEach((card) => {
-
-    let rect;
-    let mouseX = 0;
-    let mouseY = 0;
-    let frameRequested = false;
-
-    card.addEventListener("mouseenter", () => {
-        rect = card.getBoundingClientRect();
-        card.style.willChange = "transform";
-    });
+document.querySelectorAll(".group").forEach(card => {
 
     card.addEventListener("mousemove", (e) => {
 
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+        const rect = card.getBoundingClientRect();
 
-        if (frameRequested) return;
+        const x = e.clientX - rect.left;
 
-        frameRequested = true;
+        const y = e.clientY - rect.top;
 
-        requestAnimationFrame(() => {
+        card.style.transform =
 
-            const x = mouseX - rect.left;
-            const y = mouseY - rect.top;
-
-            card.style.transform = `
-                perspective(1000px)
-                rotateX(${-(y - rect.height / 2) / 30}deg)
-                rotateY(${(x - rect.width / 2) / 30}deg)
-                translateY(-8px)
-            `;
-
-            frameRequested = false;
-
-        });
+            `perspective(1000px) 
+            rotateX(${-(y - rect.height / 2) / 30}deg) 
+            rotateY(${(x - rect.width / 2) / 30}deg) 
+            translateY(-8px)`;
 
     });
 
     card.addEventListener("mouseleave", () => {
 
         card.style.transform = "";
-        card.style.willChange = "auto";
-        frameRequested = false;
 
     });
+
+});
+
+const header =
+    document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 40) {
+
+        header.classList.add("shadow-2xl");
+
+        header.classList.add("shadow-black/40");
+
+    }
+
+    else {
+
+        header.classList.remove("shadow-2xl");
+
+        header.classList.remove("shadow-black/40");
+
+    }
 
 });
 
@@ -166,34 +149,11 @@ const g = document.getElementById('glow');
 
 if (window.matchMedia('(hover:hover)').matches) {
 
-    let mouseX = 0;
-    let mouseY = 0;
+    document.addEventListener('mousemove', e => {
 
-    let animationRunning = false;
-
-    document.addEventListener("mousemove", (e) => {
-
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        if (!animationRunning) {
-
-            animationRunning = true;
-
-            requestAnimationFrame(updateGlow);
-
-        }
+        g.style.left = e.clientX + 'px'; g.style.top = e.clientY + 'px';
 
     });
-
-    function updateGlow() {
-
-        g.style.left = mouseX + "px";
-        g.style.top = mouseY + "px";
-
-        animationRunning = false;
-
-    }
 
 }
 
@@ -234,9 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-const customSelect = document.querySelectorAll(".custom-select")
-
-customSelect.forEach(select => {
+document.querySelectorAll(".custom-select").forEach(select => {
 
     const button = select.querySelector(".select-btn");
     const menu = select.querySelector(".options");
@@ -246,7 +204,7 @@ customSelect.forEach(select => {
     button.addEventListener("click", () => {
 
         // Close all other dropdowns
-        customSelect.forEach(other => {
+        document.querySelectorAll(".custom-select").forEach(other => {
 
             if (other !== select) {
 
@@ -308,7 +266,7 @@ customSelect.forEach(select => {
 
 document.addEventListener("click", e => {
 
-    customSelect.forEach(select => {
+    document.querySelectorAll(".custom-select").forEach(select => {
 
         if (!select.contains(e.target)) {
 
