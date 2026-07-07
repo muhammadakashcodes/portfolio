@@ -1,9 +1,14 @@
 const progressBar = document.getElementById("progressBar");
 
-window.addEventListener("scroll", () => {
+const backToTop =
+    document.getElementById("backToTop");
 
-    const scrollTop =
-        document.documentElement.scrollTop;
+const header =
+    document.querySelector("header");
+
+function handleScroll() {
+
+    const scrollTop = document.documentElement.scrollTop;
 
     const scrollHeight =
         document.documentElement.scrollHeight -
@@ -14,12 +19,6 @@ window.addEventListener("scroll", () => {
 
     progressBar.style.width = progress + "%";
 
-});
-
-const backToTop =
-    document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
 
     if (window.scrollY > 500) {
 
@@ -27,9 +26,7 @@ window.addEventListener("scroll", () => {
         backToTop.classList.remove("translate-y-10");
         backToTop.classList.remove("invisible");
 
-    }
-
-    else {
+    } else {
 
         backToTop.classList.add("opacity-0");
         backToTop.classList.add("translate-y-10");
@@ -37,8 +34,26 @@ window.addEventListener("scroll", () => {
 
     }
 
+
+    if (window.scrollY > 40) {
+
+        header.classList.add("shadow-2xl");
+        header.classList.add("shadow-black/40");
+
+    } else {
+
+        header.classList.remove("shadow-2xl");
+        header.classList.remove("shadow-black/40");
+
+    }
+
+}
+
+window.addEventListener("scroll", handleScroll, {
+    passive: true
 });
 
+handleScroll();
 
 backToTop.addEventListener("click", () => {
 
@@ -79,7 +94,9 @@ const observer =
 
     );
 
-document.querySelectorAll("button,a").forEach(btn => {
+const elements = document.querySelectorAll("button,a");
+
+elements.forEach(btn => {
 
     btn.addEventListener("mouseenter", () => {
 
@@ -95,53 +112,53 @@ document.querySelectorAll("button,a").forEach(btn => {
 
 });
 
-document.querySelectorAll(".group").forEach(card => {
+const group = document.querySelectorAll(".group")
+group.forEach((card) => {
+
+    let rect;
+    let mouseX = 0;
+    let mouseY = 0;
+    let frameRequested = false;
+
+    card.addEventListener("mouseenter", () => {
+        rect = card.getBoundingClientRect();
+        card.style.willChange = "transform";
+    });
 
     card.addEventListener("mousemove", (e) => {
 
-        const rect = card.getBoundingClientRect();
+        mouseX = e.clientX;
+        mouseY = e.clientY;
 
-        const x = e.clientX - rect.left;
+        if (frameRequested) return;
 
-        const y = e.clientY - rect.top;
+        frameRequested = true;
 
-        card.style.transform =
+        requestAnimationFrame(() => {
 
-            `perspective(1000px) 
-            rotateX(${-(y - rect.height / 2) / 30}deg) 
-            rotateY(${(x - rect.width / 2) / 30}deg) 
-            translateY(-8px)`;
+            const x = mouseX - rect.left;
+            const y = mouseY - rect.top;
+
+            card.style.transform = `
+                perspective(1000px)
+                rotateX(${-(y - rect.height / 2) / 30}deg)
+                rotateY(${(x - rect.width / 2) / 30}deg)
+                translateY(-8px)
+            `;
+
+            frameRequested = false;
+
+        });
 
     });
 
     card.addEventListener("mouseleave", () => {
 
         card.style.transform = "";
+        card.style.willChange = "auto";
+        frameRequested = false;
 
     });
-
-});
-
-const header =
-    document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 40) {
-
-        header.classList.add("shadow-2xl");
-
-        header.classList.add("shadow-black/40");
-
-    }
-
-    else {
-
-        header.classList.remove("shadow-2xl");
-
-        header.classList.remove("shadow-black/40");
-
-    }
 
 });
 
@@ -149,11 +166,34 @@ const g = document.getElementById('glow');
 
 if (window.matchMedia('(hover:hover)').matches) {
 
-    document.addEventListener('mousemove', e => {
+    let mouseX = 0;
+    let mouseY = 0;
 
-        g.style.left = e.clientX + 'px'; g.style.top = e.clientY + 'px';
+    let animationRunning = false;
+
+    document.addEventListener("mousemove", (e) => {
+
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!animationRunning) {
+
+            animationRunning = true;
+
+            requestAnimationFrame(updateGlow);
+
+        }
 
     });
+
+    function updateGlow() {
+
+        g.style.left = mouseX + "px";
+        g.style.top = mouseY + "px";
+
+        animationRunning = false;
+
+    }
 
 }
 
@@ -194,7 +234,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.querySelectorAll(".custom-select").forEach(select => {
+const customSelect = document.querySelectorAll(".custom-select")
+
+customSelect.forEach(select => {
 
     const button = select.querySelector(".select-btn");
     const menu = select.querySelector(".options");
@@ -204,7 +246,7 @@ document.querySelectorAll(".custom-select").forEach(select => {
     button.addEventListener("click", () => {
 
         // Close all other dropdowns
-        document.querySelectorAll(".custom-select").forEach(other => {
+        customSelect.forEach(other => {
 
             if (other !== select) {
 
@@ -266,7 +308,7 @@ document.querySelectorAll(".custom-select").forEach(select => {
 
 document.addEventListener("click", e => {
 
-    document.querySelectorAll(".custom-select").forEach(select => {
+    customSelect.forEach(select => {
 
         if (!select.contains(e.target)) {
 
