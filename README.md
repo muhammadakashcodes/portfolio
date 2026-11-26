@@ -1,137 +1,46 @@
-# Muhammad Akash
+# Muhammad Akash - Portfolio
 
-> Building modern digital experiences through clean design, scalable code, and continuous learning.
+Frontend portfolio built with Tailwind CSS (v3) plus a small set of design tokens.
+Spec: see the Portfolio Requirements doc.
 
----
+## Setup
 
-## About Me
-
-Hello! I'm **Muhammad Akash**, a **BS Information Technology student (Class of 2027)** with a passion for designing and developing modern digital products.
-
-My interests span across **web development**, **mobile application development**, and **software engineering**. I enjoy transforming ideas into responsive, user-focused applications while continuously expanding my technical knowledge and problem-solving skills.
-
-I believe great software combines clean architecture, intuitive user experience, and thoughtful design.
-
----
-
-## Core Focus
-
-- Web Development
-- Mobile App Development
-- Frontend Engineering
-- Responsive UI/UX
-- Software Development
-- Database Systems
-- Problem Solving
-- Version Control
-- Open Source Learning
-- Continuous Improvement
-
----
-
-## Tech Stack
-
-### Languages
-
-- HTML5
-- CSS3
-- JavaScript
-- Dart
-- Python
-- SQL
-
-### Frameworks & Tools
-
-- Flutter
-- Tailwind CSS
-- Git
-- GitHub
-- VS Code
-- Android Studio
-- Firebase
-
-### Business & Marketing Tech
-
-- SEO Fundamentals
-- Digital Marketing
-- Content Strategy
-- Analytics
-- Branding
-- UI/UX Principles
-
----
-
-## Featured Projects
-
-### Portfolio Website
-
-A minimalist portfolio showcasing my work, skills, and development journey.
-
----
-
-### Flutter Applications
-
-Coming soon...
-
----
-
-### Responsive Websites
-
-Coming soon...
-
----
-
-### IT Projects
-
-Coming soon...
-
----
-
-## Current Goals
-
-- Build production-quality web applications
-- Develop scalable Flutter applications
-- Strengthen software engineering fundamentals
-- Contribute to open-source projects
-- Continuously improve design and development skills
-
----
-
-## Repository Structure
-
-```
-.
-├── assets/
-├── css/
-├── images/
-├── js/
-├── index.html
-└── README.md
+```bash
+npm install
+npm run build   # one-time build -> dist/styles.css
+npm run dev     # rebuild on every change
 ```
 
----
+Open `index.html` in a browser (or use a local server such as VS Code Live Server).
 
-## Design Philosophy
+## Structure
 
-Minimal.
+```
+index.html              homepage (stage 1: temporary foundation check page)
+projects/               projects page and case studies (later stages)
+src/tokens.css          design tokens: the single source of truth
+src/input.css           fonts, base styles, layout primitives
+tailwind.config.js      maps Tailwind classes to the tokens
+assets/fonts/           self-hosted Manrope and Inter (latin, variable)
+assets/img/             your own project screenshots
+dist/styles.css         compiled CSS (commit this; GitHub Pages serves it)
+js/                     scripts (later stages)
+```
 
-Modern.
+## Rules
 
-Responsive.
+- Change a color, radius or size in `src/tokens.css` only. Never hard-code values in components.
+- Run `npm run build` and commit `dist/styles.css` before every deploy. Do not use the Tailwind CDN.
+- Use relative links (no leading `/`) so the site works under `/portfolio/` on GitHub Pages.
 
-Performance-focused.
+## Progress
 
-Accessible.
-
----
-
-## Connect With Me
-
-- GitHub: https://github.com/muhammadakashcodes
-- LinkedIn: *(Coming Soon)*
-- Portfolio: *(Coming Soon)*
-- Email: muhammadakashcodes@gmail.com
-
----
-
-Thank you for visiting my portfolio repository.
+- [x] 1. Foundation
+- [ ] 2. Components
+- [ ] 3. Homepage
+- [ ] 4. Projects page
+- [ ] 5. Case studies
+- [ ] 6. Contact
+- [ ] 7. Extras (resume, 404, SEO)
+- [ ] 8. Testing
+- [ ] 9. Launch
