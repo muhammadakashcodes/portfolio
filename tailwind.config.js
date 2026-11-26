@@ -19,7 +19,7 @@ module.exports = {
           text: "var(--accent-text)",
         },
         focus: "var(--focus)",
-        error: "var(-F-error)",
+        error: "var(--error)",
         success: "var(--success)",
       },
       fontFamily: {

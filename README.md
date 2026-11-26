@@ -16,15 +16,16 @@ Open `index.html` in a browser (or use a local server such as VS Code Live Serve
 ## Structure
 
 ```
-index.html              homepage (stage 1: temporary foundation check page)
+index.html              homepage (stage 2: temporary component library page)
 projects/               projects page and case studies (later stages)
 src/tokens.css          design tokens: the single source of truth
 src/input.css           fonts, base styles, layout primitives
+src/components.css      buttons, nav, cards, tags, form fields, status chip
 tailwind.config.js      maps Tailwind classes to the tokens
 assets/fonts/           self-hosted Manrope and Inter (latin, variable)
 assets/img/             your own project screenshots
 dist/styles.css         compiled CSS (commit this; GitHub Pages serves it)
-js/                     scripts (later stages)
+js/nav.js               mobile menu, scrolled header, current-section marker
 ```
 
 ## Rules
@@ -36,7 +37,7 @@ js/                     scripts (later stages)
 ## Progress
 
 - [x] 1. Foundation
-- [ ] 2. Components
+- [x] 2. Components
 - [ ] 3. Homepage
 - [ ] 4. Projects page
 - [ ] 5. Case studies

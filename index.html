@@ -29,127 +29,370 @@
       crossorigin
     />
     <link rel="stylesheet" href="dist/styles.css" />
-
-    <!-- Adds the "js" class so scroll-reveal only hides content when JavaScript is running -->
     <script>
       document.documentElement.classList.add("js");
     </script>
+    <script src="js/nav.js" defer></script>
   </head>
-  <body>
+  <body id="top">
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- STAGE 1 CHECK PAGE: temporary. Replaced by the real homepage in stage 3. -->
+    <header class="site-header" data-site-header>
+      <div class="container-site site-header__inner">
+        <a class="nav-brand" href="#top" aria-label="Akash, home">AKASH.</a>
+        <nav class="nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+          >
+            <span class="sr-only">Menu</span>
+            <svg
+              class="icon-open"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg
+              class="icon-close"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+          <div id="nav-panel" class="nav-panel" data-nav-panel>
+            <ul class="nav-list">
+              <li><a class="nav-link" href="#top">Home</a></li>
+              <li><a class="nav-link" href="#about">About</a></li>
+              <li><a class="nav-link" href="#skills">Skills</a></li>
+              <li><a class="nav-link" href="#projects">Projects</a></li>
+              <li><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Contact me</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- STAGE 2 COMPONENT LIBRARY: temporary. The real homepage replaces this in stage 3. -->
     <main id="main">
       <section class="section">
         <div class="container-site">
-          <h1>Foundation check</h1>
-          <p class="mt-4">
-            This temporary page confirms the design tokens, fonts, grid and
-            focus styles work. Press
-            <kbd
-              class="rounded-control border border-line-control px-1.5 py-0.5 text-sm"
-              >Tab</kbd
-            >
-            to test the skip link and focus ring.
+          <p class="status-chip">
+            <span class="status-chip__dot" aria-hidden="true"></span>Open to
+            freelance work
           </p>
-        </div>
-      </section>
-
-      <section class="section border-t border-line" aria-labelledby="type-h">
-        <div class="container-site">
-          <h2 id="type-h">Typography</h2>
-          <div class="mt-8 space-y-4">
-            <h3>Heading three, Manrope 700</h3>
-            <p>
-              Body text is Inter 400 at 1rem with a 1.65 line height, capped at
-              65 characters per line so it stays readable. Secondary text uses
-              the second text token.
-            </p>
-            <p class="text-ink-3 text-sm">
-              Muted small text, the lowest-contrast text allowed on this site.
-            </p>
-            <p><a href="#main">This is a link in the accent text color</a></p>
-            <p>
-              <button
-                type="button"
-                class="rounded-control bg-accent px-5 py-3 font-semibold text-white hover:bg-accent-hover"
-              >
-                Focus test button
-              </button>
-            </p>
+          <h1 class="mt-6">Component library</h1>
+          <p class="mt-4">
+            Every reusable piece the site uses, built from the design tokens.
+            Tab through the page to check focus, resize it to check layout, and
+            use the menu at narrow widths.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="btn btn-primary" href="#projects">Explore projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact me</a>
+            <button class="btn btn-ghost" type="button">Ghost button</button>
+            <button class="btn btn-primary" type="button" disabled>
+              Disabled
+            </button>
           </div>
         </div>
       </section>
 
-      <section class="section border-t border-line" aria-labelledby="color-h">
+      <section
+        id="about"
+        class="section border-t border-line"
+        aria-labelledby="about-h"
+      >
         <div class="container-site">
-          <h2 id="color-h">Color tokens</h2>
-          <ul class="grid-12 mt-8 list-none p-0">
-            <li class="col-span-12 sm:col-span-6 lg:col-span-3">
-              <div
-                class="h-16 rounded-card border border-line-control bg-bg"
-              ></div>
-              <p class="mt-2 text-sm">bg #0B0D10</p>
+          <div class="section-head">
+            <h2 id="about-h">Section header</h2>
+            <p>
+              A heading with one supporting line. The optional small label above
+              a heading is available as <code>.eyebrow</code> and should be used
+              rarely.
+            </p>
+          </div>
+          <div class="grid-12">
+            <article class="card col-span-12 md:col-span-6">
+              <h3>Card</h3>
+              <p class="mt-2">
+                Surface color, a visible border, a 12px radius and 24px padding.
+              </p>
+            </article>
+            <article class="card card-interactive col-span-12 md:col-span-6">
+              <h3>Interactive card</h3>
+              <p class="mt-2">
+                On devices that support hover (or when focus is inside), it
+                lifts 2px and the border strengthens.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        class="section border-t border-line"
+        aria-labelledby="skills-h"
+      >
+        <div class="container-site">
+          <div class="section-head">
+            <h2 id="skills-h">Skill groups and tags</h2>
+          </div>
+          <div class="grid-12">
+            <div
+              class="card skill-group col-span-12 sm:col-span-6 lg:col-span-4"
+            >
+              <h3>Core</h3>
+              <ul class="tag-list">
+                <li class="tag">HTML5</li>
+                <li class="tag">CSS3</li>
+                <li class="tag">JavaScript (ES6+)</li>
+                <li class="tag">DOM</li>
+              </ul>
+            </div>
+            <div
+              class="card skill-group col-span-12 sm:col-span-6 lg:col-span-4"
+            >
+              <h3>UI</h3>
+              <ul class="tag-list">
+                <li class="tag">Tailwind CSS</li>
+                <li class="tag">Responsive design</li>
+                <li class="tag">Accessibility basics</li>
+              </ul>
+            </div>
+            <div
+              class="card skill-group col-span-12 sm:col-span-6 lg:col-span-4"
+            >
+              <h3>Currently learning</h3>
+              <ul class="tag-list">
+                <li class="tag tag-accent">Full-stack development</li>
+                <li class="tag tag-accent">Mobile app development</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="section border-t border-line"
+        aria-labelledby="projects-h"
+      >
+        <div class="container-site">
+          <div class="section-head">
+            <h2 id="projects-h">Project cards</h2>
+            <p>
+              Screenshot placeholders stand in until you add your own images in
+              <code>assets/img/</code>.
+            </p>
+          </div>
+          <ul class="grid-12 list-none p-0">
+            <li class="col-span-12 md:col-span-6 lg:col-span-4">
+              <article class="card card-interactive project-card h-full">
+                <div
+                  class="project-card__placeholder"
+                  role="img"
+                  aria-label="Screenshot placeholder for Nexora AI"
+                >
+                  Screenshot goes here
+                </div>
+                <div class="project-card__body">
+                  <h3>Nexora AI</h3>
+                  <p>Premium AI productivity SaaS landing page.</p>
+                  <ul class="tag-list">
+                    <li class="tag">HTML</li>
+                    <li class="tag">CSS</li>
+                    <li class="tag">Responsive design</li>
+                  </ul>
+                  <div class="project-card__links">
+                    <a class="link-action" href="#projects"
+                      >Live demo<span class="sr-only"> of Nexora AI</span></a
+                    >
+                    <a class="link-action" href="#projects"
+                      >Code<span class="sr-only"> for Nexora AI</span></a
+                    >
+                    <a class="link-action" href="#projects"
+                      >Case study<span class="sr-only"> for Nexora AI</span></a
+                    >
+                  </div>
+                </div>
+              </article>
             </li>
-            <li class="col-span-12 sm:col-span-6 lg:col-span-3">
-              <div
-                class="h-16 rounded-card border border-line bg-surface"
-              ></div>
-              <p class="mt-2 text-sm">surface #111419</p>
+            <li class="col-span-12 md:col-span-6 lg:col-span-4">
+              <article class="card card-interactive project-card h-full">
+                <div
+                  class="project-card__placeholder"
+                  role="img"
+                  aria-label="Screenshot placeholder for Interactive Calculator"
+                >
+                  Screenshot goes here
+                </div>
+                <div class="project-card__body">
+                  <h3>Interactive Calculator</h3>
+                  <p>
+                    Dark minimalist calculator with history and keyboard
+                    support.
+                  </p>
+                  <ul class="tag-list">
+                    <li class="tag">HTML</li>
+                    <li class="tag">CSS</li>
+                    <li class="tag">JavaScript</li>
+                  </ul>
+                  <div class="project-card__links">
+                    <a class="link-action" href="#projects"
+                      >Live demo<span class="sr-only">
+                        of Interactive Calculator</span
+                      ></a
+                    >
+                    <a class="link-action" href="#projects"
+                      >Code<span class="sr-only">
+                        for Interactive Calculator</span
+                      ></a
+                    >
+                    <a class="link-action" href="#projects"
+                      >Case study<span class="sr-only">
+                        for Interactive Calculator</span
+                      ></a
+                    >
+                  </div>
+                </div>
+              </article>
             </li>
-            <li class="col-span-12 sm:col-span-6 lg:col-span-3">
-              <div
-                class="h-16 rounded-card border border-line bg-surface-raised"
-              ></div>
-              <p class="mt-2 text-sm">surface-raised #161A20</p>
-            </li>
-            <li class="col-span-12 sm:col-span-6 lg:col-span-3">
-              <div class="h-16 rounded-card bg-accent"></div>
-              <p class="mt-2 text-sm">accent #4F46E5</p>
-            </li>
-            <li class="col-span-12 sm:col-span-6 lg:col-span-3">
-              <div class="h-16 rounded-card bg-accent-hover"></div>
-              <p class="mt-2 text-sm">accent-hover #4338CA</p>
-            </li>
-            <li class="col-span-12 sm:col-span-6 lg:col-span-3">
-              <div class="h-16 rounded-card bg-accent-text"></div>
-              <p class="mt-2 text-sm">accent-text #818CF8</p>
-            </li>
-            <li class="col-span-12 sm:col-span-6 lg:col-span-3">
-              <div class="h-16 rounded-card bg-focus"></div>
-              <p class="mt-2 text-sm">focus #A5B4FC</p>
-            </li>
-            <li class="col-span-12 sm:col-span-6 lg:col-span-3">
-              <div class="h-16 rounded-card bg-line-control"></div>
-              <p class="mt-2 text-sm">border-control #667085</p>
+            <li class="col-span-12 md:col-span-6 lg:col-span-4">
+              <article class="card card-interactive project-card h-full">
+                <div
+                  class="project-card__placeholder"
+                  role="img"
+                  aria-label="Screenshot placeholder for Weather App"
+                >
+                  Screenshot goes here
+                </div>
+                <div class="project-card__body">
+                  <div class="flex flex-wrap items-center gap-3">
+                    <h3>Weather App</h3>
+                    <span class="tag tag-accent">In progress</span>
+                  </div>
+                  <p>Real-time weather using live API data.</p>
+                  <ul class="tag-list">
+                    <li class="tag">JavaScript</li>
+                    <li class="tag">Open-Meteo API</li>
+                  </ul>
+                  <div class="project-card__links">
+                    <a class="link-action" href="#projects"
+                      >Code<span class="sr-only"> for Weather App</span></a
+                    >
+                  </div>
+                </div>
+              </article>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="section border-t border-line" aria-labelledby="shape-h">
+      <section
+        id="contact"
+        class="section border-t border-line"
+        aria-labelledby="contact-h"
+      >
         <div class="container-site">
-          <h2 id="shape-h">Radius and shadow</h2>
-          <div class="grid-12 mt-8">
-            <div
-              class="col-span-12 md:col-span-4 rounded-control border border-line bg-surface p-6"
-            >
-              <h3>10px</h3>
-              <p class="mt-2 text-sm">Controls</p>
-            </div>
-            <div
-              class="col-span-12 md:col-span-4 rounded-card border border-line bg-surface p-6 shadow-card"
-            >
-              <h3>12px</h3>
-              <p class="mt-2 text-sm">Cards, with the card shadow</p>
-            </div>
-            <div
-              class="col-span-12 md:col-span-4 rounded-panel border border-line bg-surface p-6"
-            >
-              <h3>16px</h3>
-              <p class="mt-2 text-sm">Large panels and media</p>
-            </div>
+          <div class="section-head">
+            <h2 id="contact-h">Form fields</h2>
+            <p>
+              Shown here with one field in its error state. Validation and
+              sending come in stage 6.
+            </p>
           </div>
+          <form
+            class="card grid max-w-xl gap-6"
+            novalidate
+            onsubmit="return false;"
+          >
+            <div class="field">
+              <label for="f-name"
+                >Name
+                <span class="font-normal text-ink-3">(required)</span></label
+              >
+              <input
+                class="input"
+                id="f-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="f-email"
+                >Email
+                <span class="font-normal text-ink-3">(required)</span></label
+              >
+              <input
+                class="input"
+                id="f-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                aria-invalid="true"
+                aria-describedby="f-email-err"
+                value="akash@"
+              />
+              <p class="field-error" id="f-email-err">
+                Enter a full email address, like name@example.com.
+              </p>
+            </div>
+            <div class="field">
+              <label for="f-msg"
+                >Message
+                <span class="font-normal text-ink-3">(required)</span></label
+              >
+              <textarea
+                class="input"
+                id="f-msg"
+                name="message"
+                required
+                aria-describedby="f-msg-hint"
+              ></textarea>
+              <p class="hint" id="f-msg-hint">
+                What are you working on, and how can I help?
+              </p>
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="f-company">Leave this field empty</label
+              ><input
+                id="f-company"
+                name="company"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+            <div>
+              <button class="btn btn-primary" type="button">
+                Send message
+              </button>
+            </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
     </main>
