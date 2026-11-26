@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0B0D10" />
+    <meta name="color-scheme" content="dark" />
+    <title>Interactive Calculator case study | Muhammad Akash</title>
+    <meta
+      name="description"
+      content="Case study: Interactive Calculator, a dark minimalist calculator with history and keyboard support, built by Muhammad Akash."
+    />
+
+    <link
+      rel="preload"
+      href="../../assets/fonts/manrope-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../../assets/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="../../dist/styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="../../js/nav.js" defer></script>
+    <script src="../../js/main.js" defer></script>
+    <!-- TODO: replace the "#" links (live demo, code), the screenshot placeholders, and every [bracketed] sentence -->
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="container-site site-header__inner">
+        <a class="nav-brand" href="../../index.html" aria-label="Akash, home"
+          >AKASH.</a
+        >
+        <nav class="nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+          >
+            <span class="sr-only">Menu</span>
+            <svg
+              class="icon-open"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg
+              class="icon-close"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+          <div id="nav-panel" class="nav-panel" data-nav-panel>
+            <ul class="nav-list">
+              <li><a class="nav-link" href="../../index.html">Home</a></li>
+              <li>
+                <a class="nav-link" href="../../index.html#about">About</a>
+              </li>
+              <li>
+                <a class="nav-link" href="../../index.html#skills">Skills</a>
+              </li>
+              <li>
+                <a class="nav-link" href="../" aria-current="true">Projects</a>
+              </li>
+              <li>
+                <a class="nav-link" href="../../index.html#contact">Contact</a>
+              </li>
+            </ul>
+            <a class="btn btn-primary" href="../../index.html#contact"
+              >Contact me</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="top" class="case-header" aria-labelledby="case-h">
+        <div class="container-site">
+          <a class="link-action" href="../">Back to all projects</a>
+          <h1 id="case-h" class="mt-4">Interactive Calculator</h1>
+          <p class="case-lead">
+            A premium dark calculator with keyboard support and a calculation
+            history, built with HTML, CSS and JavaScript.
+          </p>
+          <div class="case-actions">
+            <a class="btn btn-primary" href="#"
+              >Live demo<span class="sr-only">
+                of Interactive Calculator</span
+              ></a
+            >
+            <a class="btn btn-secondary" href="#"
+              >View code<span class="sr-only">
+                for Interactive Calculator</span
+              ></a
+            >
+          </div>
+          <dl class="card meta-grid mt-10">
+            <div>
+              <dt>Type</dt>
+              <dd>JavaScript app</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>Solo: design and development</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>
+                <ul class="tag-list mt-1">
+                  <li class="tag">HTML</li>
+                  <li class="tag">CSS</li>
+                  <li class="tag">JavaScript</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section
+        class="section border-t border-line"
+        aria-labelledby="overview-h"
+      >
+        <div class="container-site">
+          <div class="grid-12">
+            <div class="col-span-12 lg:col-span-4">
+              <h2 id="overview-h">Overview</h2>
+            </div>
+            <div class="prose-flow col-span-12 lg:col-span-8">
+              <p>
+                An interactive calculator with a minimalist dark design: a large
+                display, clearly separated number and operator keys, and subtle
+                hover and active states.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section border-t border-line" aria-labelledby="goal-h">
+        <div class="container-site">
+          <div class="grid-12">
+            <div class="col-span-12 lg:col-span-4">
+              <h2 id="goal-h">Problem and goal</h2>
+            </div>
+            <div class="prose-flow col-span-12 lg:col-span-8">
+              <p>
+                Build a calculator that handles the edge cases (decimals,
+                percentages, division by zero) and feels as good to use as it
+                looks, with a mouse, touch or keyboard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section border-t border-line" aria-labelledby="role-h">
+        <div class="container-site">
+          <div class="grid-12">
+            <div class="col-span-12 lg:col-span-4">
+              <h2 id="role-h">My role</h2>
+            </div>
+            <div class="prose-flow col-span-12 lg:col-span-8">
+              <p>
+                Solo project. I designed the interface, wrote the layout and
+                styling, and built all of the calculator logic in JavaScript.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section border-t border-line" aria-labelledby="process-h">
+        <div class="container-site">
+          <div class="grid-12">
+            <div class="col-span-12 lg:col-span-4">
+              <h2 id="process-h">Process and key decisions</h2>
+            </div>
+            <div class="prose-flow col-span-12 lg:col-span-8">
+              <ul>
+                <li>
+                  A dark, restrained palette: near-black background, a slightly
+                  lighter surface for the calculator, a violet accent and
+                  near-white text.
+                </li>
+                <li>
+                  A rounded container with number keys and operator keys
+                  visually distinct from each other.
+                </li>
+                <li>
+                  Every key has an accessible label and a visible focus state,
+                  so it works without a mouse.
+                </li>
+                <li>
+                  Keyboard support, so digits, operators, Enter and Backspace
+                  work as expected.
+                </li>
+                <li>
+                  A calculation history so earlier results can be seen again.
+                </li>
+              </ul>
+              <p>What it does:</p>
+              <ul>
+                <li>
+                  Number keys, addition, subtraction, multiplication and
+                  division
+                </li>
+                <li>Equals, clear, and delete last digit</li>
+                <li>Decimals, percentage, and a plus/minus toggle</li>
+                <li>Division-by-zero handling</li>
+                <li>Keyboard support</li>
+                <li>Calculation history</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section border-t border-line" aria-labelledby="result-h">
+        <div class="container-site">
+          <div class="section-head">
+            <h2 id="result-h">Result</h2>
+            <p>
+              The finished calculator is live. Use the live demo link to try it,
+              including with the keyboard.
+            </p>
+          </div>
+          <!-- TODO: swap each placeholder for <img class="shot" src="../../assets/img/FILE.webp" alt="DESCRIBE WHAT IS SHOWN" width="1600" height="1000" loading="lazy"> -->
+          <div class="grid-12">
+            <figure class="col-span-12 md:col-span-8">
+              <div
+                class="shot-placeholder shot-placeholder--desktop"
+                role="img"
+                aria-label="Screenshot placeholder: Interactive Calculator on desktop"
+              >
+                Desktop screenshot goes here
+              </div>
+              <figcaption>Interactive Calculator on desktop</figcaption>
+            </figure>
+            <figure class="col-span-12 md:col-span-4">
+              <div
+                class="shot-placeholder shot-placeholder--mobile"
+                role="img"
+                aria-label="Screenshot placeholder: Interactive Calculator on a phone"
+              >
+                Mobile screenshot goes here
+              </div>
+              <figcaption>Interactive Calculator on a phone</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section border-t border-line" aria-labelledby="learned-h">
+        <div class="container-site">
+          <div class="grid-12">
+            <div class="col-span-12 lg:col-span-4">
+              <h2 id="learned-h">What I learned and what I'd improve</h2>
+            </div>
+            <div class="prose-flow col-span-12 lg:col-span-8">
+              <p>
+                <!-- TODO: your own words -->
+                [Write two or three sentences on what you learned that surprised
+                you.]
+              </p>
+              <p>
+                <!-- TODO: your own words -->
+                [Write two or three sentences on what you would improve or add
+                next.]
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section border-t border-line" aria-labelledby="more-h">
+        <div class="container-site">
+          <h2 id="more-h" class="sr-only">More projects</h2>
+          <nav class="grid-12" aria-label="Project navigation">
+            <a
+              class="card card-interactive case-link col-span-12 md:col-span-6"
+              href="../nexora-ai/"
+              ><span class="case-link__label">Previous project</span
+              ><span class="case-link__title">Nexora AI</span></a
+            >
+            <a
+              class="card card-interactive case-link col-span-12 md:col-span-6"
+              href="../weather-app/"
+              ><span class="case-link__label">Next project</span
+              ><span class="case-link__title">Weather App</span></a
+            >
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container-site">
+        <div class="grid-12">
+          <div class="col-span-12 md:col-span-6">
+            <p class="footer-title">Muhammad Akash</p>
+            <p class="mt-1">Frontend developer and IT student.</p>
+          </div>
+          <nav class="col-span-6 md:col-span-3" aria-label="Footer">
+            <p class="footer-title">Quick links</p>
+            <ul class="footer-links">
+              <li><a href="../../index.html#about">About</a></li>
+              <li><a href="../../index.html#skills">Skills</a></li>
+              <li><a href="../">Projects</a></li>
+              <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="col-span-6 md:col-span-3">
+            <p class="footer-title">Elsewhere</p>
+            <ul class="footer-links">
+              <li>
+                <a href="https://github.com/muhammadakashcodes">GitHub</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+              </li>
+              <li><a href="mailto:your.email@example.com">Email</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Muhammad Akash</p>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

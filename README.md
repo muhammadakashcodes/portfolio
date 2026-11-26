@@ -17,7 +17,8 @@ Open `index.html` in a browser (or use a local server such as VS Code Live Serve
 
 ```
 index.html              homepage (hero, about, education, skills, projects, contact, footer)
-projects/index.html     projects page with filters (case studies come in stage 5)
+projects/index.html     projects page with filters
+projects/<slug>/        one case study each: nexora-ai, interactive-calculator, weather-app
 src/tokens.css          design tokens: the single source of truth
 src/input.css           fonts, base styles, layout primitives
 src/components.css      buttons, nav, cards, tags, form fields, status chip
@@ -43,7 +44,7 @@ js/projects.js          project filters (keyboard accessible, announces result c
 - [x] 2. Components
 - [x] 3. Homepage
 - [x] 4. Projects page
-- [ ] 5. Case studies
+- [x] 5. Case studies
 - [ ] 6. Contact
 - [ ] 7. Extras (resume, 404, SEO)
 - [ ] 8. Testing
@@ -57,6 +58,7 @@ js/projects.js          project filters (keyboard accessible, announces result c
 - Replace each project card `href="#"` with the real live demo / code / case study URL
 - Replace the screenshot placeholders with your own images
 - Replace the same project links and screenshots in `projects/index.html`
+- In each case study (`projects/<slug>/index.html`): replace the live demo and code links, the screenshot placeholders, and the two [bracketed] sentences under "What I learned and what I'd improve" (search for `TODO`). Check that every draft statement is true of your project.
 - Set up the contact form service (stage 6)
 
 Note: the project cards are written out in both `index.html` and `projects/index.html`. When you add or change a project, update both.
