@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0B0D10" />
+    <meta name="color-scheme" content="dark" />
+    <title>Projects | Muhammad Akash</title>
+    <meta
+      name="description"
+      content="Projects by Muhammad Akash: landing pages, JavaScript apps and API-driven builds, with links to live demos and code."
+    />
+
+    <link
+      rel="preload"
+      href="../assets/fonts/manrope-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../assets/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="../dist/styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/projects.js" defer></script>
+    <!-- TODO: same project-link and screenshot TODOs as index.html -->
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="container-site site-header__inner">
+        <a class="nav-brand" href="../index.html" aria-label="Akash, home"
+          >AKASH.</a
+        >
+        <nav class="nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+          >
+            <span class="sr-only">Menu</span>
+            <svg
+              class="icon-open"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg
+              class="icon-close"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+          <div id="nav-panel" class="nav-panel" data-nav-panel>
+            <ul class="nav-list">
+              <li><a class="nav-link" href="../index.html">Home</a></li>
+              <li><a class="nav-link" href="../index.html#about">About</a></li>
+              <li>
+                <a class="nav-link" href="../index.html#skills">Skills</a>
+              </li>
+              <li>
+                <a class="nav-link" href="./" aria-current="page">Projects</a>
+              </li>
+              <li>
+                <a class="nav-link" href="../index.html#contact">Contact</a>
+              </li>
+            </ul>
+            <a class="btn btn-primary" href="../index.html#contact"
+              >Contact me</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="top" class="page-header" aria-labelledby="page-h">
+        <div class="container-site">
+          <h1 id="page-h">Projects</h1>
+          <p class="mt-4">
+            Everything I've built so far, from landing pages to small apps. Each
+            one is finished or clearly marked in progress.
+          </p>
+        </div>
+      </section>
+
+      <section class="pb-section" aria-label="Project list">
+        <div class="container-site">
+          <div
+            class="filter-bar"
+            role="group"
+            aria-label="Filter projects by type"
+            data-filter-bar
+          >
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="landing-page"
+              aria-pressed="false"
+            >
+              Landing pages
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="javascript"
+              aria-pressed="false"
+            >
+              JavaScript apps
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="api"
+              aria-pressed="false"
+            >
+              API projects
+            </button>
+          </div>
+          <p
+            class="filter-count sr-only-nojs"
+            role="status"
+            aria-live="polite"
+            data-filter-status
+          ></p>
+
+          <ul class="grid-12 mt-6 list-none p-0">
+            <li
+              class="col-span-12 md:col-span-6 lg:col-span-4"
+              data-project
+              data-category="landing-page"
+            >
+              <article class="card card-interactive project-card reveal h-full">
+                <div
+                  class="project-card__placeholder"
+                  role="img"
+                  aria-label="Screenshot placeholder for Nexora AI"
+                >
+                  Screenshot goes here
+                </div>
+                <div class="project-card__body">
+                  <h2 class="text-xl">Nexora AI</h2>
+                  <p>Premium AI productivity SaaS landing page.</p>
+                  <ul class="tag-list">
+                    <li class="tag">HTML</li>
+                    <li class="tag">CSS</li>
+                    <li class="tag">Responsive design</li>
+                  </ul>
+                  <div class="project-card__links">
+                    <a class="link-action" href="#"
+                      >Live demo<span class="sr-only"> of Nexora AI</span></a
+                    >
+                    <a class="link-action" href="#"
+                      >Code<span class="sr-only"> for Nexora AI</span></a
+                    >
+                    <a class="link-action" href="#"
+                      >Case study<span class="sr-only"> for Nexora AI</span></a
+                    >
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li
+              class="col-span-12 md:col-span-6 lg:col-span-4"
+              data-project
+              data-category="javascript"
+            >
+              <article class="card card-interactive project-card reveal h-full">
+                <div
+                  class="project-card__placeholder"
+                  role="img"
+                  aria-label="Screenshot placeholder for Interactive Calculator"
+                >
+                  Screenshot goes here
+                </div>
+                <div class="project-card__body">
+                  <h2 class="text-xl">Interactive Calculator</h2>
+                  <p>
+                    Dark minimalist calculator with history and keyboard
+                    support.
+                  </p>
+                  <ul class="tag-list">
+                    <li class="tag">HTML</li>
+                    <li class="tag">CSS</li>
+                    <li class="tag">JavaScript</li>
+                  </ul>
+                  <div class="project-card__links">
+                    <a class="link-action" href="#"
+                      >Live demo<span class="sr-only">
+                        of Interactive Calculator</span
+                      ></a
+                    >
+                    <a class="link-action" href="#"
+                      >Code<span class="sr-only">
+                        for Interactive Calculator</span
+                      ></a
+                    >
+                    <a class="link-action" href="#"
+                      >Case study<span class="sr-only">
+                        for Interactive Calculator</span
+                      ></a
+                    >
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li
+              class="col-span-12 md:col-span-6 lg:col-span-4"
+              data-project
+              data-category="javascript api"
+            >
+              <article class="card card-interactive project-card reveal h-full">
+                <div
+                  class="project-card__placeholder"
+                  role="img"
+                  aria-label="Screenshot placeholder for Weather App"
+                >
+                  Screenshot goes here
+                </div>
+                <div class="project-card__body">
+                  <div class="flex flex-wrap items-center gap-3">
+                    <h2 class="text-xl">Weather App</h2>
+                    <span class="tag tag-accent">In progress</span>
+                  </div>
+                  <p>Real-time weather using live API data.</p>
+                  <ul class="tag-list">
+                    <li class="tag">JavaScript</li>
+                    <li class="tag">Open-Meteo API</li>
+                  </ul>
+                  <div class="project-card__links">
+                    <a class="link-action" href="#"
+                      >Code<span class="sr-only"> for Weather App</span></a
+                    >
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <p class="empty-state" data-filter-empty hidden>
+            No projects in this category yet.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container-site">
+        <div class="grid-12">
+          <div class="col-span-12 md:col-span-6">
+            <p class="footer-title">Muhammad Akash</p>
+            <p class="mt-1">Frontend developer and IT student.</p>
+          </div>
+          <nav class="col-span-6 md:col-span-3" aria-label="Footer">
+            <p class="footer-title">Quick links</p>
+            <ul class="footer-links">
+              <li><a href="../index.html#about">About</a></li>
+              <li><a href="../index.html#skills">Skills</a></li>
+              <li><a href="./">Projects</a></li>
+              <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="col-span-6 md:col-span-3">
+            <p class="footer-title">Elsewhere</p>
+            <ul class="footer-links">
+              <li>
+                <a href="https://github.com/muhammadakashcodes">GitHub</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+              </li>
+              <li><a href="mailto:your.email@example.com">Email</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Muhammad Akash</p>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

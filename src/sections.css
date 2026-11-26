@@ -124,3 +124,89 @@
     align-items: center;
   }
 }
+
+/* ==========================================================================
+   Projects page
+   ========================================================================== */
+@layer components {
+  .page-header {
+    padding-block: clamp(3.5rem, 9vw, 6rem) 2rem;
+  }
+
+  /* Filters only exist when JavaScript can run them */
+  .filter-bar {
+    display: none;
+  }
+  .js .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0.25rem var(--gutter);
+  }
+  @media (min-width: 640px) {
+    .js .filter-bar {
+      flex-wrap: wrap;
+      overflow: visible;
+      margin-inline: 0;
+      padding-inline: 0;
+    }
+  }
+  .filter-btn {
+    flex: none;
+    min-height: 2.75rem;
+    padding: 0.5rem 1.125rem;
+    border: 1px solid var(--border-control);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-2);
+    font: inherit;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color var(--dur-fast) var(--ease),
+      color var(--dur-fast) var(--ease),
+      border-color var(--dur-fast) var(--ease);
+  }
+  .filter-btn:hover {
+    background: var(--surface-raised);
+    color: var(--text);
+  }
+  /* Selected state: filled and with a check mark, so it is not shown by color alone */
+  .filter-btn[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .filter-btn[aria-pressed="true"]::before {
+    content: "\2713";
+    content: "\2713" / "";
+    margin-right: 0.5rem;
+  }
+
+  .filter-count {
+    margin-top: 1rem;
+    font-size: var(--fs-small);
+    color: var(--text-3);
+  }
+  .empty-state {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--text-2);
+  }
+  .empty-state[hidden] {
+    display: none;
+  }
+}
+@layer components {
+  .sr-only-nojs {
+    display: none;
+  }
+  .js .sr-only-nojs {
+    display: block;
+  }
+  .pb-section {
+    padding-bottom: var(--section-y);
+  }
+}
