@@ -17,6 +17,8 @@ Open `index.html` in a browser (or use a local server such as VS Code Live Serve
 
 ```
 QA-CHECKLIST.md         automated test results and manual checks to do
+DEPLOY.md               step-by-step launch on GitHub Pages
+scripts/preflight.js    finds placeholders left to fix (npm run check)
 404.html                not-found page (paths start with /portfolio/)
 sitemap.xml, robots.txt search engine files
 index.html              homepage (hero, about, education, skills, projects, contact, footer)
@@ -52,7 +54,11 @@ js/contact.js           contact form: validation, error messages, sending
 - [x] 6. Contact
 - [x] 7. Extras (resume, 404, SEO)
 - [x] 8. Testing (automated; see QA-CHECKLIST.md for the manual checks)
-- [ ] 9. Launch
+- [x] 9. Launch guide (see DEPLOY.md)
+
+## Before launch
+
+Run `npm run check`: it rebuilds the CSS and lists every placeholder still left. Then follow `DEPLOY.md`.
 
 ## TODO before launch (search `TODO` in index.html)
 

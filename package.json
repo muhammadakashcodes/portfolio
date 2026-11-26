@@ -5,7 +5,9 @@
   "description": "Muhammad Akash - frontend developer portfolio",
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch"
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "preflight": "node scripts/preflight.js",
+    "check": "npm run build && node scripts/preflight.js"
   },
   "devDependencies": {
     "@fontsource-variable/inter": "^5.2.8",
