@@ -11,7 +11,7 @@
     <title>Muhammad Akash | Frontend Developer</title>
     <meta
       name="description"
-      content="Muhammad Akash is a frontend developer building clean, accessible web interfaces."
+      content="Muhammad Akash is a frontend developer building clean, accessible web interfaces. See projects, skills and how to get in touch."
     />
 
     <link
@@ -33,8 +33,19 @@
       document.documentElement.classList.add("js");
     </script>
     <script src="js/nav.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <!-- ======================================================================
+       TODO BEFORE LAUNCH (search this file for "TODO"):
+       1. About text: rewrite in your own words
+       2. Education: replace [Institution name]
+       3. Email, LinkedIn: replace the placeholder addresses (contact section and footer)
+       4. Project cards: replace each "#" link with the real live demo / code / case study URL
+       5. Project cards: replace the screenshot placeholders with your own images
+       6. Contact form: set the form service URL (stage 6)
+       ====================================================================== -->
   </head>
-  <body id="top">
+  <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="site-header" data-site-header>
@@ -91,63 +102,93 @@
       </div>
     </header>
 
-    <!-- STAGE 2 COMPONENT LIBRARY: temporary. The real homepage replaces this in stage 3. -->
     <main id="main">
-      <section class="section">
+      <!-- Hero -->
+      <section id="top" class="hero" aria-labelledby="hero-h">
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="container-site">
-          <p class="status-chip">
-            <span class="status-chip__dot" aria-hidden="true"></span>Open to
-            freelance work
-          </p>
-          <h1 class="mt-6">Component library</h1>
-          <p class="mt-4">
-            Every reusable piece the site uses, built from the design tokens.
-            Tab through the page to check focus, resize it to check layout, and
-            use the menu at narrow widths.
-          </p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a class="btn btn-primary" href="#projects">Explore projects</a>
-            <a class="btn btn-secondary" href="#contact">Contact me</a>
-            <button class="btn btn-ghost" type="button">Ghost button</button>
-            <button class="btn btn-primary" type="button" disabled>
-              Disabled
-            </button>
+          <div class="grid-12">
+            <div class="col-span-12 lg:col-span-9">
+              <p class="status-chip">
+                <span class="status-chip__dot" aria-hidden="true"></span>Open to
+                freelance work
+              </p>
+              <p class="eyebrow mt-8">IT student · Frontend developer</p>
+              <h1 id="hero-h">Muhammad Akash</h1>
+              <p class="hero-lead mt-6">
+                Frontend developer building clean, accessible web interfaces,
+                currently expanding into full-stack and mobile development.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#projects">Explore projects</a>
+                <a class="btn btn-secondary" href="#contact">Contact me</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- About -->
       <section
         id="about"
         class="section border-t border-line"
         aria-labelledby="about-h"
       >
         <div class="container-site">
-          <div class="section-head">
-            <h2 id="about-h">Section header</h2>
-            <p>
-              A heading with one supporting line. The optional small label above
-              a heading is available as <code>.eyebrow</code> and should be used
-              rarely.
-            </p>
-          </div>
           <div class="grid-12">
-            <article class="card col-span-12 md:col-span-6">
-              <h3>Card</h3>
-              <p class="mt-2">
-                Surface color, a visible border, a 12px radius and 24px padding.
+            <div class="col-span-12 lg:col-span-4">
+              <h2 id="about-h">About me</h2>
+            </div>
+            <!-- TODO: rewrite these three paragraphs in your own words (about 120-150 words total) -->
+            <div class="prose-flow col-span-12 lg:col-span-8">
+              <p>
+                I'm an IT student focused on web development. I learn by
+                building: each project in this portfolio started as a question I
+                wanted to answer, like how to pull live data from an API or how
+                to make an interface feel polished.
               </p>
-            </article>
-            <article class="card card-interactive col-span-12 md:col-span-6">
-              <h3>Interactive card</h3>
-              <p class="mt-2">
-                On devices that support hover (or when focus is inside), it
-                lifts 2px and the border strengthens.
+              <p>
+                I care about the details people notice without being able to
+                name them: spacing, typography, contrast, and interfaces that
+                work with a keyboard as well as a mouse.
               </p>
-            </article>
+              <p>
+                Next, I'm moving into full-stack and mobile development, and I'm
+                open to freelance projects where I can keep building and
+                learning.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Education -->
+      <section
+        id="education"
+        class="section border-t border-line"
+        aria-labelledby="education-h"
+      >
+        <div class="container-site">
+          <div class="grid-12">
+            <div class="col-span-12 lg:col-span-4">
+              <h2 id="education-h">Education</h2>
+            </div>
+            <div class="col-span-12 lg:col-span-8">
+              <article class="card reveal">
+                <h3>BS Information Technology</h3>
+                <p class="mt-1">
+                  <!-- TODO: your institution -->Bahauddin Zakariya University, Multan (PAKISTAN)
+                </p>
+                <p class="mt-4">
+                  <span class="tag tag-accent">Expected graduation 2027</span>
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
       <section
         id="skills"
         class="section border-t border-line"
@@ -155,11 +196,11 @@
       >
         <div class="container-site">
           <div class="section-head">
-            <h2 id="skills-h">Skill groups and tags</h2>
+            <h2 id="skills-h">Technical skills</h2>
           </div>
           <div class="grid-12">
             <div
-              class="card skill-group col-span-12 sm:col-span-6 lg:col-span-4"
+              class="card skill-group reveal col-span-12 md:col-span-6 lg:col-span-4"
             >
               <h3>Core</h3>
               <ul class="tag-list">
@@ -170,7 +211,7 @@
               </ul>
             </div>
             <div
-              class="card skill-group col-span-12 sm:col-span-6 lg:col-span-4"
+              class="card skill-group reveal col-span-12 md:col-span-6 lg:col-span-4"
             >
               <h3>UI</h3>
               <ul class="tag-list">
@@ -180,8 +221,25 @@
               </ul>
             </div>
             <div
-              class="card skill-group col-span-12 sm:col-span-6 lg:col-span-4"
+              class="card skill-group reveal col-span-12 md:col-span-6 lg:col-span-4"
             >
+              <h3>Data and APIs</h3>
+              <ul class="tag-list">
+                <li class="tag">Fetch / REST APIs</li>
+                <li class="tag">Open-Meteo API</li>
+              </ul>
+            </div>
+            <div
+              class="card skill-group reveal col-span-12 md:col-span-6 lg:col-span-6"
+            >
+              <h3>Tools</h3>
+              <ul class="tag-list">
+                <li class="tag">Git</li>
+                <li class="tag">GitHub</li>
+                <li class="tag">Browser DevTools</li>
+              </ul>
+            </div>
+            <div class="card skill-group reveal col-span-12 lg:col-span-6">
               <h3>Currently learning</h3>
               <ul class="tag-list">
                 <li class="tag tag-accent">Full-stack development</li>
@@ -192,6 +250,7 @@
         </div>
       </section>
 
+      <!-- Featured projects -->
       <section
         id="projects"
         class="section border-t border-line"
@@ -199,15 +258,16 @@
       >
         <div class="container-site">
           <div class="section-head">
-            <h2 id="projects-h">Project cards</h2>
+            <h2 id="projects-h">Featured projects</h2>
             <p>
-              Screenshot placeholders stand in until you add your own images in
-              <code>assets/img/</code>.
+              Things I've built to learn, each one finished or clearly marked in
+              progress.
             </p>
           </div>
+          <!-- TODO: replace every href="#" below with the real URL, and swap each placeholder for <img class="project-card__media" src="assets/img/..." alt="..." width="1280" height="800" loading="lazy"> -->
           <ul class="grid-12 list-none p-0">
             <li class="col-span-12 md:col-span-6 lg:col-span-4">
-              <article class="card card-interactive project-card h-full">
+              <article class="card card-interactive project-card reveal h-full">
                 <div
                   class="project-card__placeholder"
                   role="img"
@@ -224,13 +284,13 @@
                     <li class="tag">Responsive design</li>
                   </ul>
                   <div class="project-card__links">
-                    <a class="link-action" href="#projects"
+                    <a class="link-action" href="#"
                       >Live demo<span class="sr-only"> of Nexora AI</span></a
                     >
-                    <a class="link-action" href="#projects"
+                    <a class="link-action" href="#"
                       >Code<span class="sr-only"> for Nexora AI</span></a
                     >
-                    <a class="link-action" href="#projects"
+                    <a class="link-action" href="#"
                       >Case study<span class="sr-only"> for Nexora AI</span></a
                     >
                   </div>
@@ -238,7 +298,7 @@
               </article>
             </li>
             <li class="col-span-12 md:col-span-6 lg:col-span-4">
-              <article class="card card-interactive project-card h-full">
+              <article class="card card-interactive project-card reveal h-full">
                 <div
                   class="project-card__placeholder"
                   role="img"
@@ -258,17 +318,17 @@
                     <li class="tag">JavaScript</li>
                   </ul>
                   <div class="project-card__links">
-                    <a class="link-action" href="#projects"
+                    <a class="link-action" href="#"
                       >Live demo<span class="sr-only">
                         of Interactive Calculator</span
                       ></a
                     >
-                    <a class="link-action" href="#projects"
+                    <a class="link-action" href="#"
                       >Code<span class="sr-only">
                         for Interactive Calculator</span
                       ></a
                     >
-                    <a class="link-action" href="#projects"
+                    <a class="link-action" href="#"
                       >Case study<span class="sr-only">
                         for Interactive Calculator</span
                       ></a
@@ -278,7 +338,7 @@
               </article>
             </li>
             <li class="col-span-12 md:col-span-6 lg:col-span-4">
-              <article class="card card-interactive project-card h-full">
+              <article class="card card-interactive project-card reveal h-full">
                 <div
                   class="project-card__placeholder"
                   role="img"
@@ -297,7 +357,7 @@
                     <li class="tag">Open-Meteo API</li>
                   </ul>
                   <div class="project-card__links">
-                    <a class="link-action" href="#projects"
+                    <a class="link-action" href="#"
                       >Code<span class="sr-only"> for Weather App</span></a
                     >
                   </div>
@@ -305,96 +365,229 @@
               </article>
             </li>
           </ul>
+
+          <!-- More projects -->
+          <div
+            class="card reveal mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <h3>More projects</h3>
+              <p class="mt-1">
+                Smaller builds and experiments, with filters by type.
+              </p>
+            </div>
+            <a class="btn btn-secondary" href="projects/">View all projects</a>
+          </div>
         </div>
       </section>
 
+      <!-- Contact -->
       <section
         id="contact"
         class="section border-t border-line"
         aria-labelledby="contact-h"
       >
         <div class="container-site">
-          <div class="section-head">
-            <h2 id="contact-h">Form fields</h2>
-            <p>
-              Shown here with one field in its error state. Validation and
-              sending come in stage 6.
-            </p>
+          <div class="grid-12">
+            <div class="col-span-12 lg:col-span-5">
+              <h2 id="contact-h">Let's build something together.</h2>
+              <p class="mt-4">
+                Open to freelance projects and professional opportunities. Send
+                a message and I'll reply.
+              </p>
+              <ul class="contact-list">
+                <li>
+                  <a class="icon-link" href="mailto:muhammadakashcodes@gmail.com"
+                    ><!-- TODO: your email -->
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      />
+                      <path d="M22 6l-10 7L2 6" />
+                    </svg>
+                    muhammadakashcodes@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="icon-link"
+                    href="https://github.com/muhammadakashcodes"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                      />
+                    </svg>
+                    GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="icon-link"
+                    href="https://www.linkedin.com/in/muhammadakashcodes"
+                    ><!-- TODO: your LinkedIn URL -->
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+                      />
+                    </svg>
+                    LinkedIn</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-span-12 lg:col-span-7">
+              <!-- TODO (stage 6): set action to your form service URL and wire validation -->
+              <form
+                class="card reveal grid gap-6"
+                method="post"
+                action="#"
+                novalidate
+              >
+                <div class="field">
+                  <label for="f-name"
+                    >Name
+                    <span class="font-normal text-ink-3"
+                      >(required)</span
+                    ></label
+                  >
+                  <input
+                    class="input"
+                    id="f-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="f-email"
+                    >Email
+                    <span class="font-normal text-ink-3"
+                      >(required)</span
+                    ></label
+                  >
+                  <input
+                    class="input"
+                    id="f-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="f-msg"
+                    >Message
+                    <span class="font-normal text-ink-3"
+                      >(required)</span
+                    ></label
+                  >
+                  <textarea
+                    class="input"
+                    id="f-msg"
+                    name="message"
+                    required
+                    aria-describedby="f-msg-hint"
+                  ></textarea>
+                  <p class="hint" id="f-msg-hint">
+                    What are you working on, and how can I help?
+                  </p>
+                </div>
+                <div class="hp-field" aria-hidden="true">
+                  <label for="f-company">Leave this field empty</label
+                  ><input
+                    id="f-company"
+                    name="company"
+                    type="text"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+                <div>
+                  <button class="btn btn-primary" type="submit">
+                    Send message
+                  </button>
+                </div>
+                <p class="privacy-note">
+                  I only use your details to reply to your message.
+                </p>
+                <p class="form-status" role="status" aria-live="polite"></p>
+              </form>
+            </div>
           </div>
-          <form
-            class="card grid max-w-xl gap-6"
-            novalidate
-            onsubmit="return false;"
-          >
-            <div class="field">
-              <label for="f-name"
-                >Name
-                <span class="font-normal text-ink-3">(required)</span></label
-              >
-              <input
-                class="input"
-                id="f-name"
-                name="name"
-                type="text"
-                autocomplete="name"
-                required
-              />
-            </div>
-            <div class="field">
-              <label for="f-email"
-                >Email
-                <span class="font-normal text-ink-3">(required)</span></label
-              >
-              <input
-                class="input"
-                id="f-email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                required
-                aria-invalid="true"
-                aria-describedby="f-email-err"
-                value="akash@"
-              />
-              <p class="field-error" id="f-email-err">
-                Enter a full email address, like name@example.com.
-              </p>
-            </div>
-            <div class="field">
-              <label for="f-msg"
-                >Message
-                <span class="font-normal text-ink-3">(required)</span></label
-              >
-              <textarea
-                class="input"
-                id="f-msg"
-                name="message"
-                required
-                aria-describedby="f-msg-hint"
-              ></textarea>
-              <p class="hint" id="f-msg-hint">
-                What are you working on, and how can I help?
-              </p>
-            </div>
-            <div class="hp-field" aria-hidden="true">
-              <label for="f-company">Leave this field empty</label
-              ><input
-                id="f-company"
-                name="company"
-                type="text"
-                tabindex="-1"
-                autocomplete="off"
-              />
-            </div>
-            <div>
-              <button class="btn btn-primary" type="button">
-                Send message
-              </button>
-            </div>
-            <p class="form-status" role="status" aria-live="polite"></p>
-          </form>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container-site">
+        <div class="grid-12">
+          <div class="col-span-12 md:col-span-6">
+            <p class="footer-title">Muhammad Akash</p>
+            <p class="mt-1">Frontend developer and IT student.</p>
+          </div>
+          <nav class="col-span-6 md:col-span-3" aria-label="Footer">
+            <p class="footer-title">Quick links</p>
+            <ul class="footer-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="col-span-6 md:col-span-3">
+            <p class="footer-title">Elsewhere</p>
+            <ul class="footer-links">
+              <li>
+                <a href="https://github.com/muhammadakashcodes">GitHub</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/muhammadakashcodes">LinkedIn</a>
+              </li>
+              <li><a href="mailto:muhammadakashcodes@gmail.com">Email</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Muhammad Akash</p>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

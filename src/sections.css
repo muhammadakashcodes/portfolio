@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Page-section styles (hero, about, contact, footer). Token variables only.
+   ========================================================================== */
+@layer components {
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    isolation: isolate;
+    overflow-x: clip;
+    padding-block: clamp(4rem, 12vw, 8rem) clamp(4rem, 10vw, 7rem);
+  }
+  /* The one signature effect: a static indigo glow behind the headline */
+  .hero-glow {
+    position: absolute;
+    z-index: -1;
+    top: -35%;
+    right: -25%;
+    width: min(60rem, 150vw);
+    aspect-ratio: 1;
+    pointer-events: none;
+    background: radial-gradient(
+      closest-side,
+      color-mix(in srgb, var(--accent) 26%, transparent),
+      transparent 72%
+    );
+  }
+  .hero-lead {
+    max-width: 38ch;
+    font-size: clamp(1.125rem, 2.2vw, 1.375rem);
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 640px) {
+    .hero-actions {
+      flex-direction: row;
+    }
+  }
+
+  /* ---------- About ---------- */
+  .prose-flow > * + * {
+    margin-top: 1.25rem;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    font-weight: 500;
+  }
+  .icon-link svg {
+    flex: none;
+  }
+  .privacy-note {
+    font-size: var(--fs-small);
+    color: var(--text-3);
+  }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding-block: 3rem;
+  }
+  .footer-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    color: var(--text-2);
+    text-decoration: none;
+  }
+  .footer-links a:hover {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: var(--fs-small);
+    color: var(--text-3);
+  }
+  .footer-bottom p {
+    max-width: none;
+    color: inherit;
+  }
+  .footer-bottom a {
+    color: var(--text-2);
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+  }
+}

@@ -13,23 +13,27 @@
   --border-control: #667085;
 
   /* Text (ratios measured on --bg) */
-  --text: #f2f4f7;        /* ~17:1 */
-  --text-2: #a8b0bd;      /* ~9:1  */
-  --text-3: #8b93a1;      /* ~6:1, minimum allowed for small text */
+  --text: #f2f4f7; /* ~17:1 */
+  --text-2: #a8b0bd; /* ~9:1  */
+  --text-3: #8b93a1; /* ~6:1, minimum allowed for small text */
 
   /* Accent (soft indigo) */
   --accent-text: #818cf8; /* links, icons, small text: ~6.5:1 */
-  --accent: #4f46e5;      /* button fill, white text: ~6.3:1 */
-  --accent-hover: #4338ca;/* darker so white text stays above 4.5:1 */
-  --focus: #a5b4fc;       /* focus ring */
+  --accent: #4f46e5; /* button fill, white text: ~6.3:1 */
+  --accent-hover: #4338ca; /* darker so white text stays above 4.5:1 */
+  --focus: #a5b4fc; /* focus ring */
 
   /* Status */
   --error: #f87171;
   --success: #4ade80;
 
   /* Type */
-  --font-heading: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-body: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading:
+    "Manrope Variable", "Manrope", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body:
+    "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif;
 
   --fs-h1: clamp(2.5rem, 6vw, 4.5rem);
   --fs-h2: clamp(1.875rem, 4vw, 2.75rem);
@@ -38,10 +42,10 @@
   --fs-small: 0.875rem;
 
   /* Layout */
-  --container: 75rem;      /* 1200px */
-  --gutter: 1.5rem;        /* 24px desktop */
-  --nav-height: 4rem;      /* 64px: also drives scroll-padding for sticky nav */
-  --section-y: 4rem;       /* 64px mobile, 96px from 768px up (see input.css) */
+  --container: 75rem; /* 1200px */
+  --gutter: 1.5rem; /* 24px desktop */
+  --nav-height: 4rem; /* 64px: also drives scroll-padding for sticky nav */
+  --section-y: 4rem; /* 64px mobile, 96px from 768px up (see input.css) */
 
   /* Shape and depth */
   --radius-control: 10px;
@@ -56,9 +60,13 @@
 }
 
 @media (max-width: 639px) {
-  :root { --gutter: 1rem; }
+  :root {
+    --gutter: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
-  :root { --section-y: 6rem; }
+  :root {
+    --section-y: 6rem;
+  }
 }
