@@ -535,6 +535,14 @@ video {
   background: var(--surface-raised);
   color: var(--text);
 }
+.btn-ghost {
+  background: transparent;
+  color: var(--text-2);
+}
+.btn-ghost:hover {
+  background: var(--surface-raised);
+  color: var(--text);
+}
 .link-action {
   display: inline-flex;
   align-items: center;

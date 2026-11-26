@@ -16,6 +16,8 @@ Open `index.html` in a browser (or use a local server such as VS Code Live Serve
 ## Structure
 
 ```
+404.html                not-found page (paths start with /portfolio/)
+sitemap.xml, robots.txt search engine files
 index.html              homepage (hero, about, education, skills, projects, contact, footer)
 projects/index.html     projects page with filters
 projects/<slug>/        one case study each: nexora-ai, interactive-calculator, weather-app
@@ -47,7 +49,7 @@ js/contact.js           contact form: validation, error messages, sending
 - [x] 4. Projects page
 - [x] 5. Case studies
 - [x] 6. Contact
-- [ ] 7. Extras (resume, 404, SEO)
+- [x] 7. Extras (resume, 404, SEO)
 - [ ] 8. Testing
 - [ ] 9. Launch
 
@@ -63,3 +65,8 @@ js/contact.js           contact form: validation, error messages, sending
 - Contact form: create a free Formspree form (formspree.io), then replace `YOUR_FORM_ID` in the form's `action` in `index.html`, and set `data-fallback-email` to your real email. Until then the form shows a message with your email instead of sending.
 
 Note: the project cards are written out in both `index.html` and `projects/index.html`. When you add or change a project, update both.
+
+- Replace `assets/Muhammad-Akash-Resume.pdf` (currently a placeholder PDF) with your own one-page résumé, same file name
+- If the site address changes (for example a custom domain), update: the canonical and Open Graph URLs in every page, `sitemap.xml`, `robots.txt`, and the `/portfolio/` paths in `404.html`
+- `robots.txt` is only read by search engines at the root of a domain. On a `/portfolio/` project site it is ignored, so submit `sitemap.xml` in Google Search Console instead.
+- Optional: replace the generated icon (`assets/icon.svg` and the PNGs) and the social preview (`assets/og-image.png`) with your own design
