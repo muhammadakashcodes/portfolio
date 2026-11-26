@@ -866,8 +866,20 @@ textarea.input {
 .input[aria-invalid="true"] {
   border-color: var(--error);
 }
+.field-error {
+  margin: 0;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--error);
+}
+.field-error:before {
+  content: "Error: ";
+}
 .form-status {
   font-weight: 500;
+}
+.form-status:empty {
+  display: none;
 }
 .form-status[data-state="success"] {
   color: var(--success);

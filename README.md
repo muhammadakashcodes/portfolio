@@ -30,6 +30,7 @@ dist/styles.css         compiled CSS (commit this; GitHub Pages serves it)
 js/nav.js               mobile menu, scrolled header, current-section marker
 js/main.js              scroll reveal
 js/projects.js          project filters (keyboard accessible, announces result count)
+js/contact.js           contact form: validation, error messages, sending
 ```
 
 ## Rules
@@ -45,7 +46,7 @@ js/projects.js          project filters (keyboard accessible, announces result c
 - [x] 3. Homepage
 - [x] 4. Projects page
 - [x] 5. Case studies
-- [ ] 6. Contact
+- [x] 6. Contact
 - [ ] 7. Extras (resume, 404, SEO)
 - [ ] 8. Testing
 - [ ] 9. Launch
@@ -59,6 +60,6 @@ js/projects.js          project filters (keyboard accessible, announces result c
 - Replace the screenshot placeholders with your own images
 - Replace the same project links and screenshots in `projects/index.html`
 - In each case study (`projects/<slug>/index.html`): replace the live demo and code links, the screenshot placeholders, and the two [bracketed] sentences under "What I learned and what I'd improve" (search for `TODO`). Check that every draft statement is true of your project.
-- Set up the contact form service (stage 6)
+- Contact form: create a free Formspree form (formspree.io), then replace `YOUR_FORM_ID` in the form's `action` in `index.html`, and set `data-fallback-email` to your real email. Until then the form shows a message with your email instead of sending.
 
 Note: the project cards are written out in both `index.html` and `projects/index.html`. When you add or change a project, update both.

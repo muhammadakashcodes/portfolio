@@ -34,6 +34,7 @@
     </script>
     <script src="js/nav.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/contact.js" defer></script>
 
     <!-- ======================================================================
        TODO BEFORE LAUNCH (search this file for "TODO"):
@@ -42,7 +43,7 @@
        3. Email, LinkedIn: replace the placeholder addresses (contact section and footer)
        4. Project cards: replace each "#" link with the real live demo / code / case study URL
        5. Project cards: replace the screenshot placeholders with your own images
-       6. Contact form: set the form service URL (stage 6)
+       6. Contact form: replace YOUR_FORM_ID in the form action (Formspree) and the fallback email
        ====================================================================== -->
   </head>
   <body>
@@ -418,7 +419,7 @@
               </p>
               <ul class="contact-list">
                 <li>
-                  <a class="icon-link" href="mailto:your.email@example.com"
+                  <a class="icon-link" href="mailto:muhammadakashcodes@gmail.com"
                     ><!-- TODO: your email -->
                     <svg
                       width="20"
@@ -437,7 +438,7 @@
                       />
                       <path d="M22 6l-10 7L2 6" />
                     </svg>
-                    your.email@example.com</a
+                    muhammadakashcodes@gmail.com</a
                   >
                 </li>
                 <li>
@@ -467,7 +468,7 @@
                 <li>
                   <a
                     class="icon-link"
-                    href="https://www.linkedin.com/in/your-profile"
+                    href="https://www.linkedin.com/in/muhammadakashcodes"
                     ><!-- TODO: your LinkedIn URL -->
                     <svg
                       width="20"
@@ -492,11 +493,14 @@
             </div>
 
             <div class="col-span-12 lg:col-span-7">
-              <!-- TODO (stage 6): set action to your form service URL and wire validation -->
+              <!-- TODO: create a free Formspree form, then replace YOUR_FORM_ID in action with its ID.
+                 Also replace the fallback email below. -->
               <form
                 class="card reveal grid gap-6"
                 method="post"
-                action="#"
+                action="https://formspree.io/f/xqpqnnrj"
+                data-contact-form
+                data-fallback-email="muhammadakashcodes@gmail.com"
                 novalidate
               >
                 <div class="field">
@@ -553,7 +557,7 @@
                   <label for="f-company">Leave this field empty</label
                   ><input
                     id="f-company"
-                    name="company"
+                    name="_gotcha"
                     type="text"
                     tabindex="-1"
                     autocomplete="off"
@@ -598,9 +602,7 @@
                 <a href="https://github.com/muhammadakashcodes">GitHub</a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/muhammadakashcodes"
-                  >LinkedIn</a
-                >
+                <a href="https://www.linkedin.com/in/muhammadakashcodes">LinkedIn</a>
               </li>
               <li><a href="mailto:muhammadakashcodes@gmail.com">Email</a></li>
             </ul>
